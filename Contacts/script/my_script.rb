@@ -5,7 +5,7 @@ url = Addressable::URI.new(
   scheme: 'http',
   host: 'localhost',
   port: 3000,
-  path: 'groups/2'
+  path: 'contact_groups/3'
 ).to_s
 
 puts RestClient.delete(url)
