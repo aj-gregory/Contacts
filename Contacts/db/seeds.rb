@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 u = User.create([{name: 'Bob', email: 'bob@bob.com'}, {name: 'Joe', email: 'joe@bob.com'}])
+
+c = Contact.create([{email: 'joe@bob.com', name: 'Joe', user_id: 1}])
