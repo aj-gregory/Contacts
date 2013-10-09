@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u = User.create([{name: 'Bob', email: 'bob@bob.com'}, {name: 'Joe', email: 'joe@bob.com'}])
+u = User.create([{name: 'Bob', email: 'bob@bob.com'}, {name: 'Joe', email: 'joe@bob.com'}, {name: 'Hank', email: 'hank@bob.com'}])
 
 c = Contact.create([{email: 'joe@bob.com', name: 'Joe', user_id: 1}])
+
+g = Group.create({name: 'Cool kids', user_id: 1})
+
+cg = ContactGroup.create([{contact_id: 2, group_id: 1}, {contact_id: 3, group_id: 1}])
