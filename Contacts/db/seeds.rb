@@ -13,3 +13,5 @@ c = Contact.create([{email: 'joe@bob.com', name: 'Joe', user_id: 1}])
 g = Group.create({name: 'Cool kids', user_id: 1})
 
 cg = ContactGroup.create([{contact_id: 2, group_id: 1}, {contact_id: 3, group_id: 1}])
+
+Comment.create([{user_id: 1, contact_id: 1, body: 'this guy sucks'}, {user_id: 2, contact_id: 1, body:'best dude'}])

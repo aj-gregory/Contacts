@@ -9,6 +9,8 @@ class Contact < ActiveRecord::Base
 
   has_many :groups, :through => :contact_groups
 
+  has_many :comments
+
   def self.contacts_for_user_id(user_id)
     self.find_by_sql([<<-SQL, user_id, user_id])
       SELECT contacts.*
@@ -23,5 +25,9 @@ class Contact < ActiveRecord::Base
     user = User.find(user_id)
 
     user.contacts.where(:favorited => true)
+  end
+
+  def comment_for_user_id(user_id)
+    self.comments.where(:user_id => user_id)
   end
 end

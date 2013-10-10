@@ -2,6 +2,10 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.contacts_for_user_id(params[:user_id])
+    @contacts.map! do |contact|
+      {:contact => contact, :comment => contact.comment_for_user_id(params[:user_id])}
+    end
+
     render :json => @contacts
   end
 

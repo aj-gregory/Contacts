@@ -2,6 +2,7 @@ FirstRoutes::Application.routes.draw do
   resources :users do
     resources :contacts, :only => [:index, :create] do
       resources :contact_shares, :only => [:create]
+      resource :comment, :only => [:create]
       collection do
         get 'favorites'
       end
@@ -15,6 +16,7 @@ FirstRoutes::Application.routes.draw do
   resources :groups, :only => [:show, :update, :destroy]
   resources :contact_shares, :only => [:destroy]
   resources :contact_groups, :only => [:destroy]
+  resources :comments, :only => [:destroy]
   # get 'users' => 'users#index'
 #   post 'users' => 'users#create'
 #   get 'users/new' => 'users#new'
